@@ -17,6 +17,7 @@ body {
 }
 
 h1 {
+    font-size: 30px;
     color: black;
     text-align: center;
     font-family: Asap sans-serif;
@@ -86,4 +87,7 @@ img {
         font-size: 20px;
     }
 
+    h1 {
+        font-size: 18px;
+    }
 }

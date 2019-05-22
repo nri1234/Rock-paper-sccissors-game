@@ -3,42 +3,17 @@ var roundsPlayed = 0;
 var gameActive = true;
 var playerName = window.prompt('What is your name ?');
 var name = playerName;
-// providing game's output
 var output = document.getElementById("output");
 var player = document.getElementById("player");
 player.innerHTML = "<strong>" + name;
-
-
-function displayText(text) {
-    output.innerHTML = text + "<br>";
-}
-
-
-// providing game's result
-var compWins = 0,
-    playerWins = 0,
-    result = document.getElementById("result");
-var displayResult = function (playerWins, compWins) {
-    result.innerHTML =
-        "<strong>" +
-        playerWins +
-        "</strong> - <strong>" +
-        compWins +
-        "</strong>";
-};
-displayResult(playerWins, compWins);
-
-// when game is no longer active
-function inactiveGame() {
-    displayText("Game over, please press the new game button!");
-}
-
-// Buttons allowing player to chose a move
+var newGame = document.getElementById("newGame");
+var rounds = document.getElementById("rounds");
+// Buttons to choose move by player//
 var playerMoveRock = document.getElementById("playerMove_rock"),
     playerMovePaper = document.getElementById("playerMove_paper"),
     playerMoveScissors = document.getElementById("playerMove_scissors");
 
-// invoking playerMove function with a payer's choice parameter
+// player choice function by click//
 playerMoveRock.addEventListener("click", function () {
     if (gameActive) {
         playerMove("rock");
@@ -60,11 +35,33 @@ playerMoveScissors.addEventListener("click", function () {
         inactiveGame();
     }
 });
+//displays information text about the game//
+function displayText(text) {
+    output.innerHTML = text + "<br>";
+}
 
-// Computer move function randomizing the move
-function computerMove() {
-    var computerMoveRandom = Math.floor(Math.random() * 3) + 1;
-    switch (computerMoveRandom) {
+function inactiveGame() {
+    displayText("Game over, please press the new game button!");
+}
+
+// displays game result//
+var compWins = 0,
+    playerWins = 0,
+    result = document.getElementById("result");
+var displayResult = function (playerWins, compWins) {
+    result.innerHTML =
+        "<strong>" + //makes words bold//
+        playerWins +
+        "</strong> - <strong>" +
+        compWins +
+        "</strong>";
+};
+displayResult(playerWins, compWins);
+
+// Computer move function//
+function compMove() {
+    var compMoveRandom = Math.floor(Math.random() * 3) + 1;
+    switch (compMoveRandom) {
         case 1:
             return "rock";
         case 2:
@@ -74,14 +71,14 @@ function computerMove() {
     }
 }
 
-// determining who won the round
-function win(playerMoveChosen, computerMoveChoice) {
-    if (playerMoveChosen === computerMoveChoice) {
+// determining who won the round//
+function win(playerChoice, compChoice) {
+    if (playerChoice === compChoice) { //draw//
         return "Ups, nobody ";
     } else if (
-        (playerMoveChosen === "paper" && computerMoveChoice === "rock") ||
-        (playerMoveChosen === "rock" && computerMoveChoice === "scissors") ||
-        (playerMoveChosen === "scissors" && computerMoveChoice === "paper")
+        (playerChoice === "paper" && compChoice === "rock") ||
+        (playerChoice === "rock" && compChoice === "scissors") ||
+        (playerChoice === "scissors" && compChoice === "paper")
     ) {
         playerWins++;
         return name;
@@ -90,28 +87,29 @@ function win(playerMoveChosen, computerMoveChoice) {
         return "Computer";
     }
 }
-
-// game mechanics invoked after player's choice
-function playerMove(playerMoveChosen) {
-    var computerMoveChoice = computerMove();
-    var gameResult = win(playerMoveChosen, computerMoveChoice);
+// displays text of the results of the game, who won each game//
+function playerMove(playerChoice) {
+    var compChoice = compMove();
+    var gameResult = win(playerChoice, compChoice);
     displayResult(playerWins, compWins);
     roundsPlayed++;
+
     if (playerWins === roundsNumber) {
         displayText(
             "<srtong>" +
             name +
-            " Won the entire game!!! Round " +
+            "," +
+            " You won the entire game!!! Round " +
             roundsPlayed +
             ": <strong>" +
             gameResult +
             "</strong> won. played <strong>" +
-            playerMoveChosen +
+            playerChoice +
             "</strong>, computer played <strong>" +
-            computerMoveChoice +
+            compChoice +
             "</strong> "
         );
-        gameActive = false;
+        gameActive = false; //stops carry on playing after number of wins, START NEW GAME!!//
     } else if (compWins === roundsNumber) {
         displayText(
             " Computer won the entire game!!! Round " +
@@ -119,9 +117,9 @@ function playerMove(playerMoveChosen) {
             ": <strong>" +
             gameResult +
             "</strong> won.You played <strong>" +
-            playerMoveChosen +
+            playerChoice +
             "</strong>, computer played <strong>" +
-            computerMoveChoice +
+            compChoice +
             "</strong> "
         );
         gameActive = false;
@@ -132,18 +130,14 @@ function playerMove(playerMoveChosen) {
             ": <strong>" +
             gameResult +
             "</strong> won. You played <strong>" +
-            playerMoveChosen +
+            playerChoice +
             "</strong>, computer played <strong>" +
-            computerMoveChoice +
+            compChoice +
             "</strong>"
         );
     }
 }
-
-// new game button starting a game consisting of a number of game provided by player
-var newGame = document.getElementById("newGame"),
-    rounds = document.getElementById("rounds");
-
+//function with starting new game//
 newGame.addEventListener("click", function () {
     playerWins = 0;
     compWins = 0;
@@ -152,7 +146,9 @@ newGame.addEventListener("click", function () {
     displayText(
         "Let's see who's going to win."
     );
+    //what if player will choose not a number//
     var userInput = window.prompt("How many rounds do you want to play?");
+
     if (userInput === null || userInput === "") {
         rounds.innerHTML = "You didn't provide any value";
     } else if (isNaN(userInput)) {
