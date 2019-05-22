@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css?family=Asap:400,500");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1ab2ff;
+}
+
+.hero {
+    background: white;
+    text-align: center;
+    padding: 10px;
+}
+
+h1 {
+    color: black;
+    text-align: center;
+    font-family: Asap sans-serif;
+}
+
+p {
+    display: inline-flex;
+    font-size: 25px;
+    color: azure;
+    text-align: center;
+    font-family: "Open sans", sans-serif;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 0;
+    width: 80%;
+    font-family: "Open sans", sans-serif;
+    text-align: center;
+}
+
+.btn {
+    display: -flex;
+    flex-wrap: nowrap;
+    font-size: 20px;
+    padding: 5px 20px;
+    margin: 10px;
+    background: white;
+    border: 3px solid black;
+    width: auto;
+    height: auto;
+}
+
+#output {
+    color: floralwhite;
+}
+
+#result {
+    font-size: 50px;
+    color: white;
+    font-family: "Open sans", sans-serif;
+    border: 3px solid white;
+    width: 30%;
+    margin: 10px auto;
+}
+
+#newGame {
+    background-color: #006699;
+    color: white;
+    font-size: 20px;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+}
+
+@media(max-width: 760px) {
+    img {
+        height: 70px;
+        width: 70px;
+    }
+
+    #result {
+        font-size: 40px;
+    }
+
+}

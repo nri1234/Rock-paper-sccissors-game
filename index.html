@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Rock Paper Scissors game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic">
+    <link href="https://fonts.googleapis.com/css?family=Asap:400,500" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header class="hero">
+        <h1>Rock Paper Scissors game</h1>
+    </header>
+
+    <section class="container">
+        <div>
+            <p id="player">Player</p>
+            <p>vs.</p>
+            <p> Computer</p>
+            <div id="result"></div>
+        </div>
+    </section>
+    <section id="playerMoveChoice" class="container">
+        <div class="row">
+            <button id="playerMove_rock" class="btn">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGWOmywrb2jYtEYLRvmyq8xnxHv4ODnCaK97DeTroSJzMW0lzeNg" aria-hidden="true">
+            </button>
+            <button id="playerMove_paper" class="btn">
+                <img src="data:image/png;base64,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" aria-hidden="true">
+            </button>
+            <button id="playerMove_scissors" class="btn">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgZPsyUvickiV-DCK7kpdyuud-BGZqiEppHD3rHMWYR0i7I-68" aria-hidden="true">
+            </button>
+        </div>
+    </section>
+
+    <!-- Output of the game Player vs Computer -->
+    <section class="container">
+        <div id="output">
+            Make your move!
+        </div>
+    </section>
+
+    <!-- Button starting a new game -->
+    <section class="container">
+        <div class="row">
+            <button id="newGame" class="btn">
+                Start a new game
+            </button>
+            <div id="rounds"></div>
+        </div>
+    </section>
+
+    <script src="g.js"></script>
+</body>
+
+</html>
