@@ -1,6 +1,7 @@
+'use strict';
 var roundsNumber;
 var roundsPlayed = 0;
-var gameActive = true;
+var gameActive = false;
 var playerName = window.prompt('What is your name ?');
 var name = playerName;
 var output = document.getElementById("output");
@@ -41,7 +42,7 @@ function displayText(text) {
 }
 
 function inactiveGame() {
-    displayText("Game over, please press the new game button!");
+    displayText("Game Over!!! <br> Please press the Start new game button!");
 }
 
 // displays game result//

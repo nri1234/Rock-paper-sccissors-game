@@ -2,54 +2,54 @@
 <html>
 
     <head>
-        <meta charset="UTF-8">
-        <title>Rock Paper Scissors game</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic">
-        <link href="https://fonts.googleapis.com/css?family=Asap:400,500" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-    </head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic">
+    <link href="https://fonts.googleapis.com/css?family=Asap:400,500" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
 
-    <body>
-        <header class="hero">
-            <h1>Rock Paper Scissors game</h1>
-        </header>
-        <section class="container">
-            <div>
-                <p id="player">Player</p>
-                <p>vs.</p>
-                <p> Computer</p>
-                <div id="result"></div>
-            </div>
-        </section>
-        <section id="playerMoveChoice" class="container">
-            <div class="row">
-                <button id="playerMove_rock" class="btn">
-                    <img src="images/rock.png" alt="rock">
-                </button>
-                <button id="playerMove_paper" class="btn">
-                    <img src="images/paper.png" alt="paper">
-                </button>
-                <button id="playerMove_scissors" class="btn">
-                    <img src="images/sccissors.png" alt="sccissors">
-                </button>
-            </div>
-        </section>
-        <section class="container">
-            <div id="output">
-                Make your move!
-            </div>
-        </section>
-        <section class="container">
-            <div class="row">
-                <button id="newGame" class="btn">
-                    Start a new game
-                </button>
-                <div id="rounds"></div>
-            </div>
-        </section>
-<script type="text/javascript" src="js/script.js"></script>
+<body>
+    <header class="hero">
+        <h1>Rock Paper Scissors game</h1>
+    </header>
+    <section class="container">
+        <div>
+            <p id="player">Player</p>
+            <p>vs.</p>
+            <p> Computer</p>
+            <div id="result"></div>
+        </div>
+    </section>
+    <section id="playerMoveChoice" class="container">
+        <div class="row">
+            <button id="playerMove_rock" class="btn" data-move="rock">
+                <img src="images/rock.png" alt="rock">
+            </button>
+            <button id="playerMove_paper" class="btn" data-move="paper">
+                <img src="images/paper.png" alt="paper">
+            </button>
+            <button id="playerMove_scissors" class="btn" data-move="sccissors">
+                <img src="images/sccissors.png" alt="sccissors">
+            </button>
+        </div>
+    </section>
+    <section class="container">
+        <div id="output">
+            Please press the Start new game button!
+        </div>
+    </section>
+    <section class="container">
+        <div class="row">
+            <button id="newGame" class="btn">
+                Start new game
+            </button>
+            <div id="rounds"></div>
+        </div>
+    </section>
+    <script type="text/javascript" src="js/script.js"></script>
 
 
-    </body>
+</body>
 </html>
