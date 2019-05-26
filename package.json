@@ -21,7 +21,6 @@
         "watch:browsersync": "node_modules/.bin/browser-sync start --server -o css html",
         "watch:sassprefixer": "node-sass --output-style expanded --source-map true -o css sass --watch onchange -d 100 sass/style.scss -- autoprefixer-cli -o css/style.prefixed.css css/style.css",
         "generate:styleguide": "node-sass sass/styleguide.scss --output css"
-
     },
     "keywords": [],
     "author": "",
