@@ -26,7 +26,7 @@ var displayResult = function () {
         "</strong> - <strong>" +
         params.compWins +
         "</strong></p>";
-};
+}; //<p> result of games//
 displayResult();
 
 
@@ -160,7 +160,7 @@ newGame.addEventListener("click", function () {
     showModal("#modal-new-game"); //shows modal with no of wins and player's name//
 });
 
-// getting new game params
+// getting new game params//
 var submitNewGame = document.getElementById("submit-new-game");
 
 submitNewGame.addEventListener("click", function () {
@@ -178,7 +178,7 @@ submitNewGame.addEventListener("click", function () {
     }
 
     // get wins number //
-    var roundsInput = document.getElementById("inputRounds").value;
+    var roundsInput = document.getElementById("inputRounds").value; //adding no of rounds from modal//
     if (roundsInput === null || roundsInput === "") {
         rounds.innerHTML = "You didn't provide a value";
     } else if (isNaN(roundsInput)) {
@@ -188,7 +188,7 @@ submitNewGame.addEventListener("click", function () {
             "The value you provided is not a possible number of rounds";
     } else {
         params.gameActive = true;
-        params.roundsNumber = parseInt(roundsInput);
+        params.roundsNumber = parseInt(roundsInput); //returns no of rounds added in modal//
 
         rounds.innerHTML =
             "The game will end after <strong>" +
@@ -206,9 +206,9 @@ function hideModals() {
 
 // function adding modal content //
 var addModalContent = function (modalsID, modalContent) {
-    var modalChanged = document.querySelector(modalsID);
-    modalChanged.querySelector(".content").innerHTML = modalContent;
-};
+    var modalResult = document.querySelector(modalsID);
+    modalResult.querySelector(".content").innerHTML = modalContent;
+}; //adds content to result modal and displays result//
 
 // function to open modal //
 var showModal = function (modalShown) {
