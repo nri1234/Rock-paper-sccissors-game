@@ -139,6 +139,7 @@ body {
     @include padding (5px, 20px, 5px, 20px);
     margin: 10px;
     border: 3px solid black;
+    background: white;
 }
 
 .btn-dark[type="submit"] {
@@ -224,7 +225,7 @@ img {
 
     .content {
         min-height: 20px;
-        @include padding(10px, 0px, 10px, 0px);
+        @include padding(10px, 10px, 10px, 10px);
         width: 100%;
         font-weight: 200;
         color: aliceblue;
@@ -241,7 +242,7 @@ img {
     th,
     td {
         text-align: center;
-        padding: 2px;
+        padding: 5px;
     }
 }
 
