@@ -1,1 +1,1 @@
-# Solo-project
+#Rock-paper-sccissors-game
