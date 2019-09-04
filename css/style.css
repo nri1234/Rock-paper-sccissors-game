@@ -31,7 +31,6 @@ p {
     font-family: "Open sans", sans-serif;
 }
 
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -77,7 +76,7 @@ img {
     width: 200px;
 }
 
-@media(max-width: 760px) {
+@media (max-width: 760px) {
     img {
         height: 70px;
         width: 70px;
