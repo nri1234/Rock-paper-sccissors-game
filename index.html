@@ -22,34 +22,60 @@
             <div id="result"></div>
         </div>
     </section>
-    <section id="playerMoveChoice" class="container">
+    <section id="playersChoice" class="container">
         <div class="row">
-            <button id="playerMove_rock" class="btn" data-move="rock">
+            <button id="playerMove_rock" class="btn player-move" data-move="rock">
                 <img src="images/rock.png" alt="rock">
             </button>
-            <button id="playerMove_paper" class="btn" data-move="paper">
+            <button id="playerMove_paper" class="btn player-move" data-move="paper">
                 <img src="images/paper.png" alt="paper">
             </button>
-            <button id="playerMove_scissors" class="btn" data-move="sccissors">
+            <button id="playerMove_scissors" class="btn player-move" data-move="sccissors">
                 <img src="images/sccissors.png" alt="sccissors">
             </button>
         </div>
     </section>
     <section class="container">
         <div id="output">
-            Please press the Start new game button!
+            Make your move!
         </div>
     </section>
     <section class="container">
         <div class="row">
             <button id="newGame" class="btn">
-                Start new game
+                Start a new game
             </button>
             <div id="rounds"></div>
         </div>
     </section>
+
+    <section class="overlay" id="modal-overlay">
+        <div class="modal" id="modal-game-over">
+            <a href="#" class="close">x</a>
+            <header>The game is over!</header>
+            <div class="content"></div>
+        </div>
+        <div class="modal" id="modal-new-game">
+            <a href="#" class="close">x</a>
+            <header>Starting a new game</header>
+            <div class="content">
+                <form>
+                    <div class="form-group">
+                        <h4>What is your name?</h4>
+                        <input type="text" class="form-control" id="inputName" placeholder="Enter your name">
+
+                    </div>
+                    <div class="form-group">
+                        <h4>How many wins do you want to get?</h4>
+                        <input type="number"  class="form-control" id="inputRounds" placeholder="Wins number">
+                    </div>
+                    <button type="submit" class="btn btn-dark" id="submit-new-game">
+                        Start game
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
     <script type="text/javascript" src="js/script.js"></script>
-
-
 </body>
 </html>
