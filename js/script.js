@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 var params = {
     roundsNumber: 0,
     roundsPlayed: 1,
@@ -19,7 +19,7 @@ function inactiveGame() {
 }
 // providing game's result
 var result = document.getElementById("result");
-var displayResult = function () {
+var displayResult = function() {
     result.innerHTML =
         "<p> <strong>" +
         params.playerWins +
@@ -29,12 +29,10 @@ var displayResult = function () {
 }; //<p> result of games//
 displayResult();
 
-
-
 // player choice function by click//
 var playerMoves = document.querySelectorAll(".player-move");
 for (var i = 0; i < playerMoves.length; i++) {
-    playerMoves[i].addEventListener("click", function () {
+    playerMoves[i].addEventListener("click", function() {
         var playersChoice = this.getAttribute("data-move");
         if (params.gameActive) {
             // invoking playerMove function with a payer's choice parameter
@@ -95,7 +93,8 @@ function createProgressTable() {
     var progressTableHeading =
         "<table><tr><th>Games</th><th>Winner</th><th>Player</th><th>Computer</th><th>Result</th></tr>";
 
-    var progressTable = progressTableHeading + progressTableContent + "</table>";
+    var progressTable =
+        progressTableHeading + progressTableContent + "</table>";
     return progressTable;
 }
 // displays text of the results of the game, who won each game//
@@ -145,25 +144,21 @@ function playerMove(playerChoice) {
     }
 }
 
-
-
 //function starting new game//
-newGame.addEventListener("click", function () {
+newGame.addEventListener("click", function() {
     params.playerWins = 0;
     params.compWins = 0;
     params.roundsPlayed = 0;
     params.progress = [];
     displayResult();
-    displayText(
-        "Let's see who's going to win."
-    );
+    displayText("Let's see who's going to win.");
     showModal("#modal-new-game"); //shows modal with no of wins and player's name//
 });
 
 // getting new game params//
 var submitNewGame = document.getElementById("submit-new-game");
 
-submitNewGame.addEventListener("click", function () {
+submitNewGame.addEventListener("click", function() {
     event.preventDefault();
     hideModal(event);
     //get player name//
@@ -205,20 +200,20 @@ function hideModals() {
 }
 
 // function adding modal content //
-var addModalContent = function (modalsID, modalContent) {
+var addModalContent = function(modalsID, modalContent) {
     var modalResult = document.querySelector(modalsID);
     modalResult.querySelector(".content").innerHTML = modalContent;
 }; //adds content to result modal and displays result//
 
 // function to open modal //
-var showModal = function (modalShown) {
+var showModal = function(modalShown) {
     hideModals();
     document.querySelector(modalShown).classList.add("show");
     document.querySelector("#modal-overlay").classList.add("show");
 };
 
 //close modal//
-var hideModal = function (event) {
+var hideModal = function(event) {
     event.preventDefault();
     document.querySelector("#modal-overlay").classList.remove("show");
 };
@@ -236,7 +231,7 @@ document.querySelector("#modal-overlay").addEventListener("click", hideModal);
 var modals = document.querySelectorAll(".modal");
 
 for (var i = 0; i < modals.length; i++) {
-    modals[i].addEventListener("click", function (event) {
+    modals[i].addEventListener("click", function(event) {
         event.stopPropagation();
     });
 }
